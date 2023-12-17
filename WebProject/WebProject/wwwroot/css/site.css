@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+
+body{
+   display: flex;
+    height: 100vh;
+}
+
+aside{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 20px;
+    width: 250px;
+    background-color: #222;
+    height: 100%;
+}
+
+aside h1{
+    color: white;
+    font-size: 25px;
+}
+
+aside a{
+    color: white;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
