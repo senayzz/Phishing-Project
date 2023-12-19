@@ -16,16 +16,12 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/erdemkurt/Documents/GitHub/Phishing-Project-/WebProject/WebProject
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/erdemkurt/Documents/GitHub/Phishing-Project-/WebProject/WebProject/Views/Home/EmailTemplates.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9FbWFpbFRlbXBsYXRlcy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [/Users/erdemkurt/Documents/GitHub/Phishing-Project-/WebProject/WebProject/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erdemkurt/Documents/GitHub/Phishing-Project-/WebProject/WebProject/Views/Home/SendEmail.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9TZW5kRW1haWwuY3NodG1s
+[/Users/erdemkurt/Documents/GitHub/Phishing-Project-/WebProject/WebProject/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/erdemkurt/Documents/GitHub/Phishing-Project-/WebProject/WebProject/Views/PhishingSites/Epic.cshtml]
