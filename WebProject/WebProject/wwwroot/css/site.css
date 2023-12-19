@@ -6,6 +6,11 @@
     text-decoration: none;
 }
 
+main{
+    flex: 1;
+    padding: 30px;
+    
+}
 
 body{
    display: flex;
