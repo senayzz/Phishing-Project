@@ -16,14 +16,20 @@
     <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.45.0/apexcharts.min.js" integrity="sha512-UOduKRIf9+8H/k0GvYVVZp0SBIzVZ7aGvPstIKic8F172T1x51EMCIVhkaV1NbcFAB6RRKo4mWstwk3nAMUOCA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.45.0/apexcharts.min.css" integrity="sha512-qc0GepkUB5ugt8LevOF/K2h2lLGIloDBcWX8yawu/5V8FXSxZLn3NVMZskeEyOhlc6RxKiEj6QpSrlAoL1D3TA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
 <aside>
-    <h1>Test Platform</h1>
+    <h1><a href="@Url.Action("Index","Home")">Test Platform</a></h1>
+    
+    <section>
     <a href="@Url.Action("Index","Home")"><i class="fa-solid fa-house"></i> Dashboard</a>
     <a href="@Url.Action("EmailTemplates","Home")"><i class="fa-solid fa-envelope"></i> Email Templates</a>
     <a href="@Url.Action("SendEmail", "Home")"><i class="fa-solid fa-paper-plane"></i>Send Email</a>
+    </section>
 </aside>
 
 

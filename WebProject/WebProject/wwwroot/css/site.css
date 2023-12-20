@@ -20,22 +20,43 @@ body{
 aside{
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    padding: 20px;
+    gap: 20px;
     width: 250px;
     background-color: #222;
     height: 100%;
 }
 
-aside h1{
+aside h1 a{
+    display: flex;
     color: white;
     font-size: 25px;
+    padding: 20px;
+    margin: 0;
+    background-color: #333333;
+    
 }
 
-aside a{
+aside section{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 20px;
+}
+
+aside section a{
     color: white;
-    font-size: 18px;
+    font-size: 16px;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
+    transition: 0.3s;
 }
+
+aside section a i{
+    font-size: 22px;
+}
+
+aside section a:hover{
+    color: wheat;
+}
+

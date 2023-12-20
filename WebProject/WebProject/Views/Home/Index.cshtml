@@ -51,7 +51,27 @@ $(document).ready(function (){
                 
     </table>
 
+<div id="pie"></div>
 
+<script >
+$(document).ready(() => { 
+    const options = {
+      chart: {
+        height: 350,
+        type: "pie",
+      },
+      dataLabels: {
+        enabled: false
+      },
+      series: [44, 55, 13, 33]
+    }
+    const chart = new ApexCharts(
+      document.querySelector("#pie"),
+      options
+    );
+    chart.render();
+}) 
+</script>
 
 @* burası admin sayfasının başlangıcı olacak ben sadece sitelere yönlerndirmek için link ekledim 
 <h1>EPIC SİTESİ</h1>

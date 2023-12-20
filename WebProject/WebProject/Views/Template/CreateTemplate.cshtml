@@ -1,0 +1,37 @@
+@{
+    Layout = "_Layout";
+}
+
+<h1>Creating New Template</h1>
+<br>
+
+<form method="post">
+
+<div class="mb-3">
+    <label for="templateName" class="form-label">Template Name</label>
+    <input type="text" class="form-control" id="templateName" placeholder="Template Name">
+</div>
+
+    <div class="mb-3">
+        <label for="templateContent" class="form-label">Template Content</label>
+        <textarea class="form-control" id="templateContent" rows="3"></textarea>
+    </div>
+    
+    <div class="d-flex justify-content-end">
+    <button type="submit" class="btn btn-secondary">Create</button>
+    </div>
+</form>
+
+
+<script>
+    $(document).ready(() => {
+         tinymce.init({
+            selector: '#templateContent',
+            plugins: 'advlist autolink lists link image charmap print preview hr anchor',
+            toolbar: 'undo redo | formatselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+            height: 300
+          });    
+    })
+</script>
+
+

@@ -2,4 +2,52 @@
     Layout = "_Layout";
 }
 
-ASDF
+<h1>Send Email</h1>
+<br>
+
+<select class="form-select" aria-label="Default select example">
+    <option selected>Choose a template.</option>
+    <option value="1">Template 1</option>
+    <option value="2">Template 2</option>
+    <option value="3">Template 3</option>
+</select>
+<br>
+<h6>Enter e-mail addresses.</h6>
+
+
+<form method="post">
+
+    <div id="emailaddress">
+
+<div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Email address" name="emails[]" aria-label="Example text with button addon" aria-describedby="button-addon1">
+    <button class="btn btn-danger delete" type="button">Delete</button>
+</div>
+
+</div>
+
+    <button class="btn btn-primary" type="button" id="button-add">Add</button>
+    <div class="d-flex justify-content-end">
+        <button class="btn btn-secondary" type="submit">Send</button>
+    </div>
+</form>
+
+
+
+
+<script >
+$(document).ready(() => {
+    $("#button-add").click(() => {
+    $("#emailaddress").append(`<div class="input-group mb-3">
+                               <input type="text" class="form-control" placeholder="Email address" name="emails[]" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                                <button class="btn btn-danger delete" type="button">Delete</button>
+                               </div>`)
+    })
+    
+    
+    $("#emailaddress").on("click",".delete",(e) => {
+    $(e.target).closest(".input-group").remove()
+    console.log(e.target)
+    }) 
+})
+</script>

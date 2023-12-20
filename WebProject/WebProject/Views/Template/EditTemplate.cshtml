@@ -1,0 +1,57 @@
+@{
+    Layout = "_Layout";
+}
+
+<h1>Editing Template</h1>
+<br>
+
+<form method="post">
+
+    <div class="mb-3">
+        <label for="templateName" class="form-label">Template Name</label>
+        <input type="text" class="form-control" id="templateName" placeholder="Template Name" value="Example Template Name ">
+    </div>
+
+    <div class="mb-3">
+        <label for="templateContent" class="form-label">Template Content</label>
+        <textarea class="form-control" id="templateContent" rows="3">
+            Sayın Netflix Üyesi,
+            
+            Netflix ailesine hoş geldiniz! Size en sevdiğiniz içerikleri sunmak için buradayız. Ancak, aboneliğinizin sona erme tarihi hakkında size bir hatırlatma göndermek istiyoruz.
+            
+            Netflix Aboneliği Bilgileriniz:
+            Kullanıcı Adı: [Netflix Kullanıcı Adınızı Buraya Ekleyin]
+            Abonelik Türü: [Abonelik Türünüzü Buraya Ekleyin, örneğin Standart veya Premium]
+            Sona Erme Tarihi: [Aboneliğinizin Sona Ereceği Tarihi Buraya Ekleyin]
+            
+            Aboneliğinizin sona ereceği tarih yaklaşıyor ve aboneliğinizi yenilemek için aşağıdaki adımları takip edebilirsiniz:
+            
+            Netflix'e giriş yapın: [Netflix Hesabınıza Giriş Yapın]
+            Hesap ayarlarına gidin.
+            Abonelik bölümüne tıklayın.
+            Aboneliğinizi yenilemek için talimatları izleyin.
+            Unutmayın ki, aboneliğinizi iptal etmek isterseniz, herhangi bir zaman bu işlemi gerçekleştirebilirsiniz. Size hizmet verebilmek için buradayız ve dönmek istemeniz durumunda her zaman hoş geldiniz.
+            
+            Netflix'i seçtiğiniz için teşekkür ederiz. Daha fazla sorunuz veya yardım ihtiyacınız olursa, lütfen bizimle iletişime geçmekten çekinmeyin. Sizlere en iyi hizmeti sunmak için buradayız.
+            
+            Saygılarımla,
+            Netflix Destek Ekibi
+        </textarea>
+    </div>
+    
+    <div class="d-flex justify-content-end">
+        <button type="submit" class="btn btn-secondary">Save</button>
+    </div>
+</form>
+
+
+<script>
+    $(document).ready(() => {
+         tinymce.init({
+            selector: '#templateContent',
+            plugins: 'advlist autolink lists link image charmap print preview hr anchor',
+            toolbar: 'undo redo | formatselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+            height: 300
+          });    
+    })
+</script>
