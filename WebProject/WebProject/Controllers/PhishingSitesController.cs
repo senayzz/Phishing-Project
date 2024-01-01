@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using WebProject.Models;
 
 namespace WebProject.Controllers;
 
@@ -27,6 +28,7 @@ public class PhishingSitesController : Controller
     }
     public IActionResult Epic()
     {
+        
         return View();
     }
     public IActionResult EpicCard()
