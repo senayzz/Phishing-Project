@@ -10,6 +10,7 @@ public class HomeController : Controller
     private readonly string connectionString = "Server=localhost;Port=49152;Username=senayilmaz;Password=2002;Database=webprojectdb;";
     
     private readonly ILogger<HomeController> _logger;
+    //erdme 
 
     public HomeController(ILogger<HomeController> logger)
     {
