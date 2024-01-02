@@ -7,7 +7,7 @@ namespace WebProject.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly string connectionString = "Server=localhost;Port=49152;Username=senayilmaz;Password=2002;Database=webprojectdb;";
+    private readonly string connectionString = "Server=localhost;Port=5432;Username=erdemkurt;Password=353535;Database=phishing;";
     
     private readonly ILogger<HomeController> _logger;
 
@@ -26,13 +26,15 @@ public class HomeController : Controller
     
     public IActionResult SendEmail()
     {
-        return View();
+        List<UserModel> userEmail = GetUserFromDatebase();
+        return View(userEmail);
     }
     
     public IActionResult EmailTemplates()
     {
-        List<EmailTemplateModel> emailTemplates = GetEmailTemplatesFromDatabase();
-        return View(emailTemplates);
+        
+        
+        return View();
     }
     
     

@@ -64,3 +64,7 @@
 /Users/senayilmaz/Desktop/Phishing-Project-/WebProject/WebProject/bin/Debug/net7.0/Microsoft.Extensions.Logging.Abstractions.dll
 /Users/senayilmaz/Desktop/Phishing-Project-/WebProject/WebProject/bin/Debug/net7.0/Npgsql.dll
 /Users/senayilmaz/Desktop/Phishing-Project-/WebProject/WebProject/obj/Debug/net7.0/WebProject.csproj.CopyComplete
+/Users/erdemkurt/Documents/GitHub/Phishing-Project-/WebProject/WebProject/bin/Debug/net7.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/Users/erdemkurt/Documents/GitHub/Phishing-Project-/WebProject/WebProject/bin/Debug/net7.0/Microsoft.Extensions.Logging.Abstractions.dll
+/Users/erdemkurt/Documents/GitHub/Phishing-Project-/WebProject/WebProject/bin/Debug/net7.0/Npgsql.dll
+/Users/erdemkurt/Documents/GitHub/Phishing-Project-/WebProject/WebProject/obj/Debug/net7.0/WebProject.csproj.CopyComplete
