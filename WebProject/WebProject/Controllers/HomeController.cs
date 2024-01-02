@@ -10,6 +10,7 @@ public class HomeController : Controller
     private readonly string connectionString = "Server=localhost;Port=5432;Username=erdemkurt;Password=353535;Database=phishing;";
     
     private readonly ILogger<HomeController> _logger;
+    //erdme 
 
     public HomeController(ILogger<HomeController> logger)
     {
