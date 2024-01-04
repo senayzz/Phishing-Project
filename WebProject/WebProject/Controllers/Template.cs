@@ -100,12 +100,12 @@ public class Template : Controller
                 {
                     isExecuteCorrect = true;
                 }
-            }
+            }  
         }
         return isExecuteCorrect;
     }
     private bool InsertEmailTemplateToDatabase(EmailTemplateModel emailTemplate)
-    {
+    { 
         string insertQuery =
             "INSERT INTO email_templates (template_name, template_content, platform_id, click_count) VALUES (@TemplateName, @TemplateContent, @PlatformId, @ClickCount)";
         using (var connection = new NpgsqlConnection(connectionString))

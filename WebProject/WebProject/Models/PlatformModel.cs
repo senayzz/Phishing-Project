@@ -2,7 +2,7 @@ namespace WebProject.Models;
 
 public class PlatformModel
 {
-    public int PlatformId { get; set; }
-    public string PlatformName { get; set; }
-    public string PlatformUrl { get; set; }
+    public int platform_id { get; set; }
+    public string platform_name { get; set; }
+    public string platform_url { get; set; }
 }

