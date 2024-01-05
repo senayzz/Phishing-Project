@@ -13,8 +13,9 @@ main{
 }
 
 body{
-   display: flex;
+   
     height: 100vh;
+    padding-left: 250px;
 }
 
 aside{
@@ -23,7 +24,10 @@ aside{
     gap: 20px;
     width: 250px;
     background-color: #222;
-    height: 100%;
+    position: fixed;
+    min-height: 100%;
+    top: 0;
+    left: 0;
 }
 
 aside h1 a{

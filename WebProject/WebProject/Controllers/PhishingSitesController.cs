@@ -8,7 +8,7 @@ namespace WebProject.Controllers;
 
 public class PhishingSitesController : Controller
 {
-    private readonly string connectionString = "Server=localhost;Port=49152;Username=senayilmaz;Password=2002;Database=webprojectdb;";
+    private readonly string connectionString = "Server=localhost;Port=5432;Username=erdemkurt;Password=353535;Database=phishing;";
 
     public static UserModel staticatackUser = new UserModel();
 

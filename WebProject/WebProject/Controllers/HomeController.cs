@@ -2,13 +2,14 @@
 using Microsoft.AspNetCore.Mvc;
 using Npgsql;
 using WebProject.Models;
+using WebProject.Functions;
 
 namespace WebProject.Controllers;
 
 public class HomeController : Controller
 {
-    // private readonly string connectionString = "Server=localhost;Port=5432;Username=erdemkurt;Password=353535;Database=phishing;";
-    private readonly string connectionString = "Server=localhost;Port=49152;Username=senayilmaz;Password=2002;Database=webprojectdb;";
+    private readonly string connectionString = "Server=localhost;Port=5432;Username=erdemkurt;Password=353535;Database=phishing;";
+    // private readonly string connectionString = "Server=localhost;Port=49152;Username=senayilmaz;Password=2002;Database=webprojectdb;";
     private readonly ILogger<HomeController> _logger;
     //erdme 
 
@@ -22,6 +23,8 @@ public class HomeController : Controller
         
         return View();
     }
+    
+    
     [HttpPost]
     public IActionResult Index(AdminModel hacker)
     {
@@ -32,10 +35,11 @@ public class HomeController : Controller
         }
         else
         {
-            ViewData["ErrorMessage"] = "Kullanıcı adı veya şifre yanlış";
+            ViewData["ErrorMessage"] = "Kullanıcı adı veya şifre yanlış"; 
         }
         return View();
     }
+    
     public IActionResult AdminDashboard()
     {
         List<UserModel> phishingUserList = GetUserFromDatebase();
@@ -43,17 +47,62 @@ public class HomeController : Controller
         ViewBag.PlatformCounts = platformCounts;
         return View(phishingUserList);
     }
+
     public IActionResult SendEmail()
     {
+        SendEmailViewModel viewModel = new SendEmailViewModel();
         List<UserModel> userEmail = GetUserFromDatebase();
-        return View(userEmail);
+        List<EmailTemplateModel> emailTemplates = GetEmailTemplatesFromDatabase();
+        viewModel.Users = userEmail;
+        viewModel.EmailTemplates = emailTemplates;
+        return View(viewModel);
+}
+    
+    [HttpPost]
+    public IActionResult SendEmail(SendMail data)
+    {
+        SendEmailViewModel viewModel = new SendEmailViewModel();
+        List<UserModel> userEmail = GetUserFromDatebase();
+        List<EmailTemplateModel> emailTemplates = GetEmailTemplatesFromDatabase();
+        var template_id = data.template_id;
+        var emails = data.emails;
+        var selectedTemplate = emailTemplates[0]; // default
+        foreach (var template in emailTemplates)
+        {
+            if (template.et_id == int.Parse(template_id))
+            {
+                selectedTemplate = template;
+            }
+        }
+        foreach (var email in emails)
+        {
+            SMTP mail = new SMTP(email); 
+            mail.SendMail(selectedTemplate.template_content, selectedTemplate.template_name);
+        }
+        
+        viewModel.Users = userEmail;
+        viewModel.EmailTemplates = emailTemplates;
+        return View(viewModel);
     }
+    
+    
+    
+    
     public IActionResult EmailTemplates()
     {
         var emailTemplates = GetEmailTemplatesFromDatabase();
         return View(emailTemplates);
     }
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+    
+    public IActionResult Statistics()
+    {
+        List<UserModel> phishingUserList = GetUserFromDatebase();
+        Dictionary<int, int> platformCounts = GetPlatformCountsFromDatabase();
+        ViewBag.PlatformCounts = platformCounts;
+        return View(phishingUserList);   
+        
+    }
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });

@@ -1,0 +1,23 @@
+@{
+    Layout = "_Layout";
+}
+
+<div id="pie"> </div>
+
+<script >
+$(document).ready(() => { 
+    const options = {
+      chart: {
+        height: 300,
+        type: "pie",
+      },
+      labels: ["Google", "Epic", "Netflix"],
+      series: [@ViewBag.PlatformCounts[1], @ViewBag.PlatformCounts[2], @ViewBag.PlatformCounts[3]],
+    }
+    const chart = new ApexCharts(
+      document.querySelector("#pie"),
+      options
+    );
+    chart.render();
+}) 
+</script>
