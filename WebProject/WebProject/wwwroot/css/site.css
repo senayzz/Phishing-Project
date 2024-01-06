@@ -64,3 +64,8 @@ aside section a:hover{
     color: wheat;
 }
 
+.stat-h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
