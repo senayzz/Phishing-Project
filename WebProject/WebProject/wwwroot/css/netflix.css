@@ -85,7 +85,7 @@ form .form-control {
     transition: all 0.1s ease;
 }
 
-.form-control input:is(:focus, :valid)~label {
+.form-control input:is(:focus, :valid) ~ label {
     font-size: 0.75rem;
     transform: translateY(-130%);
 }
@@ -175,6 +175,7 @@ form .form-help :where(label, a) {
         margin: 25px 0 40px;
     }
 }
+
 img.bg {
     /*backgroun u siyah blurlamak için*/
     -webkit-filter: blur(0.5px) brightness(0.6);

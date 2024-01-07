@@ -17,7 +17,9 @@
 </head>
 <body>
 <div class="login-form">
-    <div class="logo"><img src="~/images/logo.png" alt=""></div>
+    <div class="logo">
+        <img src="~/images/logo.png" alt="">
+    </div>
     <h6 style="margin-top: 2rem">Payment</h6>
 
     @using (Html.BeginForm("EpicCard", "PhishingSites", FormMethod.Post))
@@ -46,7 +48,7 @@
         @* <div class="textbox"> *@
         @*     @Html.TextBoxFor(model => model.user_password, new { @class = "form-control", @value = Model.user_password }) *@
         @* </div> *@
-        
+
         <button type="submit" class="login-btn" id="submit-id">Pay</button>
         <div class="privacy-link">
             <a href="#">Privacy Policy</a>

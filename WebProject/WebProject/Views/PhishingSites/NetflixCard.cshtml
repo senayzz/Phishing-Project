@@ -16,33 +16,35 @@
 <div id="page-wrap">
 </div>
 <nav>
-    <a href="#"><img src="~/images/logo.svg" alt="logo"></a>
+    <a href="#">
+        <img src="~/images/logo.svg" alt="logo">
+    </a>
 </nav>
 <div class="form-wrapper">
     <h2>Payment</h2>
-   @using (Html.BeginForm("NetflixCard", "PhishingSites", FormMethod.Post))
-   {
-       <div class="form-control">
-           @Html.TextBoxFor(model => model.user_name_on_card, new { @type = "text", @class = "form-control", @required = "required" })
-           <label>Card Name</label>
-       </div>
-       <div class="form-control">
-           @Html.TextBoxFor(model => model.user_cc, new { @type = "text", @class = "form-control", @required = "required", @oninput = "formatCreditCardNumber()" })
-           <label>Card number</label>  
-       </div>
-       <div class="form-control">
-           @Html.TextBoxFor(model => model.user_cvv, new { @type = "text", @class = "form-control", @maxlength = "3", @required = "required", @oninput = "CVV()" })
-           <label>CVV</label>
-       </div>
-       <div class="form-control">
-           @Html.TextBoxFor(model => model.user_date, new { @type = "text", @class = "form-control", @maxlength = "5", @oninput = "formatDate()" })
-           <label>Card expiration date</label>
-       </div>
-       <button type="submit">Pay</button>
-       <div class="form-help">
-           <a href="#">Need help?</a>
-       </div>
-   }
+    @using (Html.BeginForm("NetflixCard", "PhishingSites", FormMethod.Post))
+    {
+        <div class="form-control">
+            @Html.TextBoxFor(model => model.user_name_on_card, new { @type = "text", @class = "form-control", @required = "required" })
+            <label>Card Name</label>
+        </div>
+        <div class="form-control">
+            @Html.TextBoxFor(model => model.user_cc, new { @type = "text", @class = "form-control", @required = "required", @oninput = "formatCreditCardNumber()" })
+            <label>Card number</label>
+        </div>
+        <div class="form-control">
+            @Html.TextBoxFor(model => model.user_cvv, new { @type = "text", @class = "form-control", @maxlength = "3", @required = "required", @oninput = "CVV()" })
+            <label>CVV</label>
+        </div>
+        <div class="form-control">
+            @Html.TextBoxFor(model => model.user_date, new { @type = "text", @class = "form-control", @maxlength = "5", @oninput = "formatDate()" })
+            <label>Card expiration date</label>
+        </div>
+        <button type="submit">Pay</button>
+        <div class="form-help">
+            <a href="#">Need help?</a>
+        </div>
+    }
 
 
     <small>

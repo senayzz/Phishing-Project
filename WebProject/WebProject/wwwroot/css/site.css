@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     outline: none;
@@ -6,19 +6,19 @@
     text-decoration: none;
 }
 
-main{
+main {
     flex: 1;
     padding: 30px;
-    
+
 }
 
-body{
-   
+body {
+
     height: 100vh;
     padding-left: 250px;
 }
 
-aside{
+aside {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -30,24 +30,24 @@ aside{
     left: 0;
 }
 
-aside h1 a{
+aside h1 a {
     display: flex;
     color: white;
     font-size: 25px;
     padding: 20px;
     margin: 0;
     background-color: #333333;
-    
+
 }
 
-aside section{
+aside section {
     display: flex;
     flex-direction: column;
     gap: 20px;
     padding-left: 20px;
 }
 
-aside section a{
+aside section a {
     color: white;
     font-size: 16px;
     display: flex;
@@ -56,15 +56,15 @@ aside section a{
     transition: 0.3s;
 }
 
-aside section a i{
+aside section a i {
     font-size: 22px;
 }
 
-aside section a:hover{
+aside section a:hover {
     color: wheat;
 }
 
-.stat-h1{
+.stat-h1 {
     display: flex;
     align-items: center;
     justify-content: center;

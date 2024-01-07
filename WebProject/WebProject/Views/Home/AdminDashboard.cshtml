@@ -24,7 +24,7 @@ $(document).ready(function (){
     </tr>
     </thead>
     <tbody>
-    @foreach(var item in Model)
+    @foreach (var item in Model)
     {
         <tr>
             <td>@item.platform_id</td>
@@ -34,10 +34,9 @@ $(document).ready(function (){
             <td>@item.user_cc</td>
             <td>@item.user_date</td>
             <td>@item.user_cvv</td>
-                   
+
         </tr>
     }
     </tbody>
-                
-</table>
 
+</table>

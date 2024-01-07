@@ -31,8 +31,7 @@ body {
     font-weight: 400;
 }
 
-.box .logo
-{
+.box .logo {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -107,35 +106,38 @@ body {
 
 .box input[type="submit"]:hover {
     background-color: #287ae6;
-    box-shadow: 0 1px 1px 0 rgba(66,133,244,0.45), 0 1px 3px 1px rgba(66,133,244,0.3);
+    box-shadow: 0 1px 1px 0 rgba(66, 133, 244, 0.45), 0 1px 3px 1px rgba(66, 133, 244, 0.3);
 }
 
-#google-img{
-    width:83px;
-    height:30px;
+#google-img {
+    width: 83px;
+    height: 30px;
     margin-bottom: 10px;
     align-items: center;
 }
-#sign-in{
+
+#sign-in {
     margin: 10px;
 }
-.forget{
+
+.forget {
     text-decoration: none;
-    color: rgb(26,115,232);
+    color: rgb(26, 115, 232);
     font-size: 14px;
     font-weight: 500;
     line-height: 1.334;
     /*margin-top: -15px;*/
 }
-#text{
-    color: rgb(95,99,104);
+
+#text {
+    color: rgb(95, 99, 104);
     font-size: 14px;
     line-height: 1.4286;
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
 
-#lbl-show-psw{
+#lbl-show-psw {
     color: black;
     font-size: 14px;
     line-height: 1.4286;
