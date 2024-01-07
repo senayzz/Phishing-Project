@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Npgsql;
 using WebProject.Models;
@@ -8,8 +9,8 @@ namespace WebProject.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly string connectionString = "Server=localhost;Port=5432;Username=erdemkurt;Password=353535;Database=phishing;";
-    // private readonly string connectionString = "Server=localhost;Port=49152;Username=senayilmaz;Password=2002;Database=webprojectdb;";
+    // private readonly string connectionString = "Server=localhost;Port=5432;Username=erdemkurt;Password=353535;Database=phishing;";
+    private readonly string connectionString = "Server=localhost;Port=49152;Username=senayilmaz;Password=2002;Database=webprojectdb;";
     private readonly ILogger<HomeController> _logger;
     //erdme 
 
@@ -53,20 +54,26 @@ public class HomeController : Controller
         SendEmailViewModel viewModel = new SendEmailViewModel();
         List<UserModel> userEmail = GetUserFromDatebase();
         List<EmailTemplateModel> emailTemplates = GetEmailTemplatesFromDatabase();
-        viewModel.Users = userEmail;
         viewModel.EmailTemplates = emailTemplates;
         return View(viewModel);
-}
+    }
     
     [HttpPost]
-    public IActionResult SendEmail(SendMail data)
+    public IActionResult SendEmail(SendEmailViewModel data)
     {
         SendEmailViewModel viewModel = new SendEmailViewModel();
-        List<UserModel> userEmail = GetUserFromDatebase();
+        
         List<EmailTemplateModel> emailTemplates = GetEmailTemplatesFromDatabase();
-        var template_id = data.template_id;
-        var emails = data.emails;
+        var template_id = data.et_id;
+        var emails = data.mailto;
         var selectedTemplate = emailTemplates[0]; // default
+        Debug.WriteLine("SENAAAAAA");
+        for (int i = 0; i < data.mailto.Count; i++)
+        {
+            InsertSendedEmailsToDatabase(data.mailto[i], int.Parse(template_id), DateTime.Now);
+            Debug.WriteLine(data.mailto[i]);
+        }
+        Debug.WriteLine(data.et_id);
         foreach (var template in emailTemplates)
         {
             if (template.et_id == int.Parse(template_id))
@@ -80,14 +87,10 @@ public class HomeController : Controller
             mail.SendMail(selectedTemplate.template_content, selectedTemplate.template_name);
         }
         
-        viewModel.Users = userEmail;
         viewModel.EmailTemplates = emailTemplates;
         return View(viewModel);
     }
-    
-    
-    
-    
+
     public IActionResult EmailTemplates()
     {
         var emailTemplates = GetEmailTemplatesFromDatabase();
@@ -97,12 +100,22 @@ public class HomeController : Controller
     
     public IActionResult Statistics()
     {
-        List<UserModel> phishingUserList = GetUserFromDatebase();
+        List<SendMail> sentuserListmails = new List<SendMail>();
+        sentuserListmails = GetSentEmailFromDatabase();
         Dictionary<int, int> platformCounts = GetPlatformCountsFromDatabase();
         ViewBag.PlatformCounts = platformCounts;
-        return View(phishingUserList);   
-        
+        List<string> templateNames = new List<string>();
+        for (int i = 0; i < sentuserListmails.Count; i++)
+        {
+            templateNames.Add(GetEmailTemplateName(sentuserListmails[i].et_id));
+        }
+        ViewBag.TemplateNames = templateNames;
+        ViewBag.TotalEmails = sentuserListmails.Count;
+        ViewBag.TotalUsers = GetUserFromDatebase().Count;
+        ViewBag.PlatformCounts = GetPlatformsFromDatabase();
+        return View(sentuserListmails);
     }
+
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
@@ -254,5 +267,102 @@ public class HomeController : Controller
             }
         }
         return isExecuteCorrect;
+    }
+    
+    public List<SendMail> GetSentEmailFromDatabase()
+    {
+        string selectQuery = "SELECT * FROM sent_emails";
+        List<SendMail> sentEmails = new List<SendMail>();
+        using (var connection = new NpgsqlConnection(connectionString))
+        {
+            connection.Open();
+            using (var command = new NpgsqlCommand(selectQuery, connection))
+            {
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        SendMail sentEmail = new SendMail
+                        {
+                            et_id = Convert.ToInt32(reader["et_id"]),
+                            mailto = reader["mailto"].ToString(),
+                            date_time = Convert.ToDateTime(reader["date_time"])
+                        };
+                        sentEmails.Add(sentEmail);
+                    }
+                }
+            }
+        }
+        return sentEmails;
+    }
+    private void InsertSendedEmailsToDatabase(string s, int parse, DateTime now)
+    {
+        string insertQuery = "INSERT INTO sent_emails(et_id, mailto, date_time) VALUES(@TemplateId, @MailTo, @Date)";
+        using (var connection = new NpgsqlConnection(connectionString))
+        {
+            connection.Open();
+            using (var command = new NpgsqlCommand(insertQuery, connection))
+            {
+                command.Parameters.AddWithValue("@TemplateId", parse);
+                command.Parameters.AddWithValue("@MailTo", s);
+                command.Parameters.AddWithValue("@Date", DateTime.Now);
+                command.ExecuteNonQuery();
+            }
+        }
+    }
+
+    public string GetEmailTemplateName(int et_id)
+    {
+        string selectQuery = "SELECT template_name FROM email_templates WHERE et_id = @TemplateId";
+        string templateName = "";
+        using (var connection = new NpgsqlConnection(connectionString))
+        {
+            connection.Open();
+            using (var command = new NpgsqlCommand(selectQuery, connection))
+            {
+                command.Parameters.AddWithValue("@TemplateId", et_id);
+                using (var reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        templateName = reader["template_name"].ToString();
+                    }
+                }
+            }
+        }
+        return templateName;
+    }  
+    public Dictionary<int, int> GetPlatformsFromDatabase()
+    {
+        Dictionary<int, int> platformCounts = new Dictionary<int, int>();
+        string selectQuery = "SELECT platform_id, COUNT(*) AS user_count FROM phishing_users WHERE platform_id IS NOT NULL GROUP BY platform_id;";
+
+        using (var connection = new NpgsqlConnection(connectionString))
+        {
+            connection.Open();
+            using (var command = new NpgsqlCommand(selectQuery, connection))
+            {
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        if (reader["platform_id"] != DBNull.Value)
+                        {
+                            int platformId = Convert.ToInt32(reader["platform_id"]);
+                            int count = Convert.ToInt32(reader["user_count"]);
+                            if (!platformCounts.ContainsKey(platformId))
+                            {
+                                platformCounts.Add(platformId, count);
+                            }
+                            else
+                            {
+                                platformCounts[platformId] += count;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return platformCounts;
     }
 }

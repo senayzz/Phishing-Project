@@ -7,7 +7,9 @@ namespace WebProject.Controllers;
 
 public class Template : Controller
 {
-    private readonly string connectionString = "Server=localhost;Port=5432;Username=erdemkurt;Password=353535;Database=phishing;";
+   // private readonly string connectionString = "Server=localhost;Port=5432;Username=erdemkurt;Password=353535;Database=phishing;";
+    private readonly string connectionString = "Server=localhost;Port=49152;Username=senayilmaz;Password=2002;Database=webprojectdb;";
+
     // GET
     public IActionResult CreateTemplate()
     {

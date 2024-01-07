@@ -2,13 +2,11 @@
 @{
     Layout = "_Layout";
 }
-
 <form method="post" asp-controller="Home" asp-action="SendEmail">
 
     <h1>Send Email</h1>
     <br>
-    
-    <select name="template_id" class="form-select" aria-label="Default select example">
+    <select name="et_id" class="form-select" aria-label="Default select example" required="required">
         <option selected>Choose a template.</option>
         @foreach (var item in Model.EmailTemplates)
         {
@@ -16,17 +14,13 @@
         }
     </select>
     <br>
-    
     <h6>Select e-mail addresses.</h6>
-    
     <div id="emailaddress">
-
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Email address" name="emails[]" aria-label="Example text with button addon" aria-describedby="button-addon1">
-            
+            @Html.TextBoxFor(model => model.mailto[0], new { @type = "email", @class = "form-control", @required = "required", @placeholder = "Email address", @aria_label = "Example text with button addon", @aria_describedby = "button-addon1" })
             <button class="btn btn-danger delete" type="button">Delete</button>
         </div>
-</div>
+    </div>
     <button class="btn btn-primary" type="button" id="button-add">Add</button>
     
     <div class="d-flex justify-content-end">
@@ -36,16 +30,19 @@
 
 <script >
 $(document).ready(() => {
+    let i = 1; // Başlangıç değeri
+
     $("#button-add").click(() => {
-    $("#emailaddress").append(`<div class="input-group mb-3">
-                                           <input type="text" class="form-control" placeholder="Email address" name="emails[]" aria-label="Example text with button addon" aria-describedby="button-addon1">
-                                <button class="btn btn-danger delete" type="button">Delete</button>
-                               </div>`)
-    })
-    
-    $("#emailaddress").on("click",".delete",(e) => {
-    $(e.target).closest(".input-group").remove()
-    console.log(e.target)
-    }) 
-})
+        let newInput = `<div class="input-group mb-3">
+                            <input class="form-control" id="mailto_${i}_" name="mailto[${i}]" required="required" type="email" value="" placeholder="Email address" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                            <button class="btn btn-danger delete" type="button">Delete</button>
+                        </div>`;
+        i++; // Her tıklamada i değerini artırıyoruz.
+        $("#emailaddress").append(newInput);
+    });
+    $("#emailaddress").on("click", ".delete", (e) => {
+        $(e.target).closest(".input-group").remove();
+    });
+});
+
 </script>
