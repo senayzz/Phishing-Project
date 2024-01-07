@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "UZjFyTTTI1TelR7ZTSc/RoulklYI2DPT0mi6PYsCcpcWywZPZnYLi2ELvXC4XfWnYc3WzxkntlRLdsXpFgzIlw==",
+  "dgSpecHash": "dAOrwaAtgJck7N0uoNj4QV8eEIWY8uwJdDSOWKOePXA8K3NDVXfODUE9/tF8i2R5S9E1HT2EnPRJwBpZNj1KsQ==",
   "success": true,
-  "projectFilePath": "/Users/senayilmaz/Desktop/Phishing-Project-/WebProject/WebProject/WebProject.csproj",
+  "projectFilePath": "/Users/erdemkurt/Documents/GitHub/Phishing-Project-/WebProject/WebProject/WebProject.csproj",
   "expectedPackageFiles": [
-    "/Users/senayilmaz/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
-    "/Users/senayilmaz/.nuget/packages/microsoft.extensions.logging.abstractions/8.0.0/microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
-    "/Users/senayilmaz/.nuget/packages/npgsql/8.0.1/npgsql.8.0.1.nupkg.sha512"
+    "/Users/erdemkurt/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "/Users/erdemkurt/.nuget/packages/microsoft.extensions.logging.abstractions/8.0.0/microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "/Users/erdemkurt/.nuget/packages/npgsql/8.0.1/npgsql.8.0.1.nupkg.sha512"
   ],
   "logs": []
 }
