@@ -81,6 +81,10 @@
       "PackagePath": "staticwebassets/images/xbox.png"
     },
     {
+      "Id": "/Users/senayilmaz/Desktop/Phishing-Project-/WebProject/WebProject/wwwroot/imagesofmail/EGS_Cyberpunk2077_CDPROJEKTRED_S1_03_2560x1440-359e77d3cd0a40aebf3bbc130d14c5c7.jpeg",
+      "PackagePath": "staticwebassets/imagesofmail/EGS_Cyberpunk2077_CDPROJEKTRED_S1_03_2560x1440-359e77d3cd0a40aebf3bbc130d14c5c7.jpeg"
+    },
+    {
       "Id": "/Users/senayilmaz/Desktop/Phishing-Project-/WebProject/WebProject/wwwroot/js/card.js",
       "PackagePath": "staticwebassets/js/card.js"
     },

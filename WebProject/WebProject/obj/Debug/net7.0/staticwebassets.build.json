@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+VJYIhoDxmKt7+UfESv6rEpRJE1xipCC3y++0S83Fe0=",
+  "Hash": "8km3ZDSU8cNSivbQOA2PhexMmtHutz7r0Ldfj0W/82k=",
   "Source": "WebProject",
   "BasePath": "_content/WebProject",
   "Mode": "Default",
@@ -372,6 +372,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/images/xbox.png"
+    },
+    {
+      "Identity": "/Users/senayilmaz/Desktop/Phishing-Project-/WebProject/WebProject/wwwroot/imagesofmail/EGS_Cyberpunk2077_CDPROJEKTRED_S1_03_2560x1440-359e77d3cd0a40aebf3bbc130d14c5c7.jpeg",
+      "SourceId": "WebProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/senayilmaz/Desktop/Phishing-Project-/WebProject/WebProject/wwwroot/",
+      "BasePath": "_content/WebProject",
+      "RelativePath": "imagesofmail/EGS_Cyberpunk2077_CDPROJEKTRED_S1_03_2560x1440-359e77d3cd0a40aebf3bbc130d14c5c7.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/imagesofmail/EGS_Cyberpunk2077_CDPROJEKTRED_S1_03_2560x1440-359e77d3cd0a40aebf3bbc130d14c5c7.jpeg"
     },
     {
       "Identity": "/Users/senayilmaz/Desktop/Phishing-Project-/WebProject/WebProject/wwwroot/js/card.js",
