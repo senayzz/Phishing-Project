@@ -39,7 +39,7 @@
 
     <h6>Register</h6>
 
-    @using (Html.BeginForm("Epic", "PhishingSites", FormMethod.Post))
+    @using (Html.BeginForm("Epic", "Sites", FormMethod.Post))
     {
         <div class="textbox">
             @Html.TextBoxFor(model => model.user_email, new { placeholder = "Email", required = "required" })

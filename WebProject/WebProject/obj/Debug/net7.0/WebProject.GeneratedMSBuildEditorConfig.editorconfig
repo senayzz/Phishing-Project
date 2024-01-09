@@ -36,44 +36,44 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9TdGF0aXN0aWNzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erdemkurt/Documents/GitHub/Phishing-Project-/WebProject/WebProject/Views/PhishingSites/Epic.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGhpc2hpbmdTaXRlcy9FcGljLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/erdemkurt/Documents/GitHub/Phishing-Project-/WebProject/WebProject/Views/PhishingSites/EpicCard.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGhpc2hpbmdTaXRlcy9FcGljQ2FyZC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/erdemkurt/Documents/GitHub/Phishing-Project-/WebProject/WebProject/Views/PhishingSites/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGhpc2hpbmdTaXRlcy9FcnJvci5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/erdemkurt/Documents/GitHub/Phishing-Project-/WebProject/WebProject/Views/PhishingSites/Google.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGhpc2hpbmdTaXRlcy9Hb29nbGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/erdemkurt/Documents/GitHub/Phishing-Project-/WebProject/WebProject/Views/PhishingSites/GoogleCard.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGhpc2hpbmdTaXRlcy9Hb29nbGVDYXJkLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/erdemkurt/Documents/GitHub/Phishing-Project-/WebProject/WebProject/Views/PhishingSites/GooglePassword.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGhpc2hpbmdTaXRlcy9Hb29nbGVQYXNzd29yZC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/erdemkurt/Documents/GitHub/Phishing-Project-/WebProject/WebProject/Views/PhishingSites/Netflix.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGhpc2hpbmdTaXRlcy9OZXRmbGl4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/erdemkurt/Documents/GitHub/Phishing-Project-/WebProject/WebProject/Views/PhishingSites/NetflixCard.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGhpc2hpbmdTaXRlcy9OZXRmbGl4Q2FyZC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [/Users/erdemkurt/Documents/GitHub/Phishing-Project-/WebProject/WebProject/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/erdemkurt/Documents/GitHub/Phishing-Project-/WebProject/WebProject/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/erdemkurt/Documents/GitHub/Phishing-Project-/WebProject/WebProject/Views/Sites/Epic.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2l0ZXMvRXBpYy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/erdemkurt/Documents/GitHub/Phishing-Project-/WebProject/WebProject/Views/Sites/EpicCard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2l0ZXMvRXBpY0NhcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/erdemkurt/Documents/GitHub/Phishing-Project-/WebProject/WebProject/Views/Sites/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2l0ZXMvRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/erdemkurt/Documents/GitHub/Phishing-Project-/WebProject/WebProject/Views/Sites/Google.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2l0ZXMvR29vZ2xlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/erdemkurt/Documents/GitHub/Phishing-Project-/WebProject/WebProject/Views/Sites/GoogleCard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2l0ZXMvR29vZ2xlQ2FyZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/erdemkurt/Documents/GitHub/Phishing-Project-/WebProject/WebProject/Views/Sites/GooglePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2l0ZXMvR29vZ2xlUGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/erdemkurt/Documents/GitHub/Phishing-Project-/WebProject/WebProject/Views/Sites/Netflix.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2l0ZXMvTmV0ZmxpeC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/erdemkurt/Documents/GitHub/Phishing-Project-/WebProject/WebProject/Views/Sites/NetflixCard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2l0ZXMvTmV0ZmxpeENhcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/erdemkurt/Documents/GitHub/Phishing-Project-/WebProject/WebProject/Views/Template/CreateTemplate.cshtml]

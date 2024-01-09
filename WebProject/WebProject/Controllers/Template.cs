@@ -7,20 +7,22 @@ namespace WebProject.Controllers;
 
 public class Template : Controller
 {
-   // private readonly string connectionString = "Server=localhost;Port=5432;Username=erdemkurt;Password=353535;Database=phishing;";
-    private readonly string connectionString = "Server=localhost;Port=49152;Username=senayilmaz;Password=2002;Database=webprojectdb;";
+    private readonly string connectionString =
+        "Server=localhost;Port=5432;Username=erdemkurt;Password=353535;Database=phishing;";
+    //private readonly string connectionString = "Server=localhost;Port=49152;Username=senayilmaz;Password=2002;Database=webprojectdb;";
 
     // GET
     public IActionResult CreateTemplate()
     {
         return View();
     }
+
     public IActionResult EditTemplate(int id)
     {
         EmailTemplateModel emailTemplate = GetEmailTemplateByIdFromDatabase(id);
         return View(emailTemplate);
     }
-    
+
     public IActionResult SaveTemplate(EmailTemplateModel emailTemplate)
     {
         // Debug.WriteLine("SENAAAAAAAAAA");
@@ -28,30 +30,32 @@ public class Template : Controller
         bool isExecuteCorrect = UpdateEmailTemplateInDatabase(emailTemplate);
         if (isExecuteCorrect)
         {
-            ViewData["SuccessMessage"]= "Template is updated";
+            ViewData["SuccessMessage"] = "Template is updated";
         }
         else
         {
             ViewData["ErrorMessage"] = "Template is not updated";
         }
+
         return RedirectToAction("EmailTemplates", "Home");
     }
-    
+
     //CreateTemplate function name is create new template
     public IActionResult CreateTemplateEmail(EmailTemplateModel emailTemplate)
     {
         bool isExecuteCorrect = InsertEmailTemplateToDatabase(emailTemplate);
         if (isExecuteCorrect)
         {
-            ViewData["SuccessMessage"]= "Template is created";
+            ViewData["SuccessMessage"] = "Template is created";
         }
         else
         {
             ViewData["ErrorMessage"] = "Template is not created";
         }
+
         return RedirectToAction("EmailTemplates", "Home");
     }
-    
+
     private EmailTemplateModel GetEmailTemplateByIdFromDatabase(int id)
     {
         string selectQuery = "SELECT * FROM email_templates WHERE et_id = @TemplateId";
@@ -80,14 +84,16 @@ public class Template : Controller
                 }
             }
         }
+
         return emailTemplate;
     }
-    
+
     private bool UpdateEmailTemplateInDatabase(EmailTemplateModel emailTemplate)
     {
         Debug.WriteLine("2323232332323");
         Debug.WriteLine(emailTemplate.template_content);
-        string updateQuery = "UPDATE email_templates SET template_name = @TemplateName, template_content = @TemplateContent WHERE et_id = @TemplateId";
+        string updateQuery =
+            "UPDATE email_templates SET template_name = @TemplateName, template_content = @TemplateContent WHERE et_id = @TemplateId";
         var isExecuteCorrect = false;
         using (var connection = new NpgsqlConnection(connectionString))
         {
@@ -102,12 +108,14 @@ public class Template : Controller
                 {
                     isExecuteCorrect = true;
                 }
-            }  
+            }
         }
+
         return isExecuteCorrect;
     }
+
     private bool InsertEmailTemplateToDatabase(EmailTemplateModel emailTemplate)
-    { 
+    {
         string insertQuery =
             "INSERT INTO email_templates (template_name, template_content, platform_id, click_count) VALUES (@TemplateName, @TemplateContent, @PlatformId, @ClickCount)";
         using (var connection = new NpgsqlConnection(connectionString))
@@ -126,9 +134,7 @@ public class Template : Controller
                 }
             }
         }
+
         return false;
     }
-
-
-
 }

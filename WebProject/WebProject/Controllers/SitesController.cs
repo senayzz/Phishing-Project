@@ -6,11 +6,11 @@ using WebProject.Models;
 
 namespace WebProject.Controllers;
 
-public class PhishingSitesController : Controller
+public class SitesController : Controller
 {
-    // private readonly string connectionString = "Server=localhost;Port=5432;Username=erdemkurt;Password=353535;Database=phishing;";
     private readonly string connectionString =
-        "Server=localhost;Port=49152;Username=senayilmaz;Password=2002;Database=webprojectdb;";
+        "Server=localhost;Port=5432;Username=erdemkurt;Password=353535;Database=phishing;";
+    // private readonly string connectionString = "Server=localhost;Port=49152;Username=senayilmaz;Password=2002;Database=webprojectdb;";
 
     public static UserModel staticatackUser = new UserModel();
 
@@ -32,11 +32,11 @@ public class PhishingSitesController : Controller
                 staticatackUser.user_email = attackeduser.user_email;
             }
 
-            return RedirectToAction("GooglePassword", "PhishingSites", attackeduser);
+            return RedirectToAction("GooglePassword", "Sites", attackeduser);
         }
         else
         {
-            return RedirectToAction("Error", "PhishingSites");
+            return RedirectToAction("Error", "Sites");
         }
     }
 
@@ -59,11 +59,11 @@ public class PhishingSitesController : Controller
                 staticatackUser.user_password = attackeduser.user_password;
             }
 
-            return RedirectToAction("GoogleCard", "PhishingSites");
+            return RedirectToAction("GoogleCard", "Sites");
         }
         else
         {
-            return RedirectToAction("Error", "PhishingSites");
+            return RedirectToAction("Error", "Sites");
         }
     }
 
@@ -88,11 +88,11 @@ public class PhishingSitesController : Controller
             }
 
             ViewBag.Email = staticatackUser.user_email;
-            return RedirectToAction("Error", "PhishingSites");
+            return RedirectToAction("Error", "Sites");
         }
         else
         {
-            return RedirectToAction("Error", "PhishingSites");
+            return RedirectToAction("Error", "Sites");
         }
     }
 
@@ -115,11 +115,11 @@ public class PhishingSitesController : Controller
                 staticatackUser.user_password = attackeduser.user_password;
             }
 
-            return RedirectToAction("NetflixCard", "PhishingSites", attackeduser);
+            return RedirectToAction("NetflixCard", "Sites", attackeduser);
         }
         else
         {
-            return RedirectToAction("Error", "PhishingSites");
+            return RedirectToAction("Error", "Sites");
         }
     }
 
@@ -136,11 +136,11 @@ public class PhishingSitesController : Controller
 
         if (insertionResult)
         {
-            return RedirectToAction("Error", "PhishingSites");
+            return RedirectToAction("Error", "Sites");
         }
         else
         {
-            return RedirectToAction("Error", "PhishingSites");
+            return RedirectToAction("Error", "Sites");
         }
     }
 
@@ -163,11 +163,11 @@ public class PhishingSitesController : Controller
                 staticatackUser.user_password = attackeduser.user_password;
             }
 
-            return RedirectToAction("EpicCard", "PhishingSites", attackeduser);
+            return RedirectToAction("EpicCard", "Sites", attackeduser);
         }
         else
         {
-            return RedirectToAction("Error", "PhishingSites");
+            return RedirectToAction("Error", "Sites");
         }
     }
 
@@ -186,12 +186,12 @@ public class PhishingSitesController : Controller
         if (insertionResult)
         {
             Debug.WriteLine("2");
-            return RedirectToAction("Error", "PhishingSites");
+            return RedirectToAction("Error", "Sites");
         }
         else
         {
             Debug.WriteLine("3");
-            return RedirectToAction("Error", "PhishingSites");
+            return RedirectToAction("Error", "Sites");
         }
     }
 
