@@ -59,5 +59,6 @@ Proje, özellikle şu amaçları hedeflemektedir:
 ## 📚 **Ek belgeler**
 <p style="font-size:20px;">Projemizin dökümantasyonu eke eklenmiştir</p>
   (Belge dili ingilizcedir.)
-[WebFinalProject.pdf](https://github.com/user-attachments/files/15974272/WebFinalProject.pdf)
+[WebFinalProject.pdf]
+(https://github.com/user-attachments/files/15974272/WebFinalProject.pdf)
 
