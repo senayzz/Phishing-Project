@@ -1,6 +1,6 @@
 # 📧 **Web Phishing Simulation Project**
 
-<p style="font-size:24px;">Bu proje, **kimlik avı saldırılarının** nasıl gerçekleştirildiğini anlamak ve bu tür saldırılara karşı **farkındalık yaratmak** amacıyla geliştirilen bir **web simülasyonudur**. Projemiz, kullanıcıların **gerçek dünyadaki kimlik avı girişimlerini** anlamalarına yardımcı olacak araçlar sunar.</p>
+<p style="font-size:24px;">Bu proje, <b>kimlik avı saldırılarının</b> nasıl gerçekleştirildiğini anlamak ve bu tür saldırılara karşı <b>farkındalık yaratmak</b> amacıyla geliştirilen bir <b>web simülasyonudur</b>. Projemiz, kullanıcıların <b>gerçek dünyadaki kimlik avı girişimlerini</b> anlamalarına yardımcı olacak araçlar sunar.</p>
 
 ![2](https://github.com/senayzz/Phishing-Project/assets/115492662/844382ac-4383-4614-b60c-c131c6f90564)
 ![1](https://github.com/senayzz/Phishing-Project/assets/115492662/0ad969ba-1465-4518-956f-9e95feaec7ef)
@@ -8,12 +8,11 @@
 
 ## 📜 **İçindekiler**
 
-- [Proje Amacı](#🎯-proje-amacı)
-- [Özellikler](#🌟-özellikler)
-- [Kullanılan Teknolojiler](#🛠-kullanılan-teknolojiler)
-- [Katkıda Bulunanlar](#🤝-katkıda-bulunanlar)
-- [Lisans](#📄-lisans)
-- [Ek Belgeler](#📚-ek-belgeler)
+- Proje Amacı
+- Özellikler
+- Kullanılan Teknolojiler
+- Katkıda Bulunanlar
+- Ek Belgeler
 
 ---
 
@@ -59,6 +58,7 @@ Proje, özellikle şu amaçları hedeflemektedir:
 ## 📚 **Ek belgeler**
 <p style="font-size:20px;">Projemizin dökümantasyonu eke eklenmiştir</p>
   (Belge dili ingilizcedir.)
+
 [WebFinalProject.pdf]
 (https://github.com/user-attachments/files/15974272/WebFinalProject.pdf)
 
