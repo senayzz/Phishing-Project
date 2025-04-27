@@ -1,63 +1,66 @@
-📧 Web Phishing Simulation Project
+# 📧 **Web Phishing Simulation Project**
+
 <p style="font-size:24px;">This project is a <b>web-based simulation</b> developed to understand how <b>phishing attacks</b> are carried out and to raise <b>awareness</b> against such threats. Our project provides tools to help users comprehend <b>real-world phishing attempts</b>.</p>
 
+![Design Sample (2)](https://github.com/senayzz/Phishing-Project/assets/115492662/6e049443-b365-47db-a682-28b87e125326)
 
-📜 Contents
-Project Purpose
+## 📜 **Contents**
 
-Features
+- Project Purpose
+- Features
+- Technologies Used
+- Contributors
+- Additional Documents
 
-Technologies Used
+---
 
-Contributors
+## 🎯 **Project Purpose**
 
-Additional Documents
-
-🎯 Project Purpose
 <p style="font-size:20px;">The main goal of this project is to better understand the techniques and methods behind **phishing attacks** and to provide education on this topic. Through this simulation, users can learn how **phishing attacks** are conducted and become more aware of how to protect themselves.</p>
-The project specifically aims to:
 
-Raise Awareness: Share the dangers and common techniques of phishing attacks with users.
+This project specifically aims to:
 
-Provide Education: Offer knowledge about real-world attack types and teach users how to defend against them.
+1. **Raise Awareness**: Share the dangers and common techniques of **phishing attacks** with users.
+2. **Provide Education**: Offer knowledge about real-world attack types and teach users how to defend against them.
+3. **Simulation Experience**: Allow users to experience **phishing attacks** in a safe environment.
 
-Simulation Experience: Allow users to experience phishing attacks in a safe environment.
+You can find more detailed objectives in the `WebFinalProject.pdf` file.
 
-Detailed objectives of the project can be found in the WebFinalProject.pdf file.
+## 🌟 **Features**
 
-🌟 Features
 <p style="font-size:20px;">Our project offers various tools and features for users:</p>
-Admin Panel: A detailed control panel for admin users, allowing management of email templates, user monitoring, and data analysis.
 
-Email Templates: Ability to create and manage email templates used in phishing attacks. Different attack scenarios can be created.
+- **Admin Panel**: A detailed control panel for admin users to manage **email templates**, monitor users, and analyze data.
+- **Email Templates**: Ability to create and manage **email templates** for use in **phishing attacks**. You can build different attack scenarios.
+- **Statistics Tracking**: Track **email open rates** and other statistics to measure the effectiveness of attacks.
+- **Popular Websites**: Create copies of **popular websites** used in **phishing attacks**, allowing you to develop scenarios that deceive users.
 
-Statistics Tracking: Monitoring of email open rates and other statistics to measure the effectiveness of the attacks.
+## 🛠 **Technologies Used**
 
-Popular Websites: Creation of copies of popular websites used in phishing attacks, enabling the development of deception scenarios through these sites.
+<p style="font-size:20px;">We used the following technologies in our project, along with the reasons for each choice:</p>
 
-🛠 Technologies Used
-<p style="font-size:20px;">We used the following technologies in our project, with justifications for each selection:</p>
+![Design Sample (4)](https://github.com/senayzz/Phishing-Project/assets/115492662/901c02b1-8e3f-45f0-ac55-9a4cc6d02143)
 
+- **ASP.NET Core**: A high-performance, secure, and widely supported web development framework. Used for backend functionalities.
+- **PostgreSQL**: A high-performance, open-source database system with large community support. Used for database management and data storage.
+- **HTML, CSS, JavaScript**: Core web technologies for developing the user interface. Used to build a modern and responsive UI.
+- **Bootstrap**: A popular CSS framework for creating user-friendly and responsive interfaces. Provided fast and effective design solutions.
+- **Node.js**: A JavaScript-based, fast, and scalable server-side platform. Used for backend processing.
 
-ASP.NET Core: A high-performance, secure, and widely supported web development framework. Used for backend functionalities.
+## 🤝 **Contributors**
 
-PostgreSQL: A high-performance, open-source database system with a large community. Used for data management and storage.
-
-HTML, CSS, JavaScript: Core web technologies used for building the user interface. Helped create a modern and responsive UI.
-
-Bootstrap: A popular CSS framework for creating user-friendly and responsive interfaces. Provided fast and effective design solutions.
-
-Node.js: A JavaScript-based, fast, and scalable server-side platform. Used for backend processing.
-
-🤝 Contributors
 <p style="font-size:20px;">Contributors to this project:</p>
-Sena YILMAZ: Backend development, database integration, and frontend development. Major contributions to the database structure, backend processes, and frontend coding.
 
-Erdem KURT: User interface design, frontend development, and database integration. Actively worked on user experience design, frontend coding, and database structure.
+- **Sena YILMAZ**: Backend development, database integration, and frontend development. Provided significant contributions to database structure, backend processes, and frontend coding.
+- **Erdem KURT**: User interface design, frontend development, and database integration. Actively contributed to user experience design, frontend coding, and database structure.
 
-📚 Additional Documents
-<p style="font-size:20px;">The documentation of our project is attached below.</p> (Document is in English.)
-WebFinalProject.pdf
+## 📚 **Additional Documents**
+
+<p style="font-size:20px;">The documentation of our project is attached below.</p> 
+(Document is in English.)
+
+[WebFinalProject.pdf](https://github.com/user-attachments/files/15974630/WebFinalProject.pdf)
+
 
 
 # 📧 **Web Phishing Simulation Project**
