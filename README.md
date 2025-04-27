@@ -1,3 +1,65 @@
+📧 Web Phishing Simulation Project
+<p style="font-size:24px;">This project is a <b>web-based simulation</b> developed to understand how <b>phishing attacks</b> are carried out and to raise <b>awareness</b> against such threats. Our project provides tools to help users comprehend <b>real-world phishing attempts</b>.</p>
+
+
+📜 Contents
+Project Purpose
+
+Features
+
+Technologies Used
+
+Contributors
+
+Additional Documents
+
+🎯 Project Purpose
+<p style="font-size:20px;">The main goal of this project is to better understand the techniques and methods behind **phishing attacks** and to provide education on this topic. Through this simulation, users can learn how **phishing attacks** are conducted and become more aware of how to protect themselves.</p>
+The project specifically aims to:
+
+Raise Awareness: Share the dangers and common techniques of phishing attacks with users.
+
+Provide Education: Offer knowledge about real-world attack types and teach users how to defend against them.
+
+Simulation Experience: Allow users to experience phishing attacks in a safe environment.
+
+Detailed objectives of the project can be found in the WebFinalProject.pdf file.
+
+🌟 Features
+<p style="font-size:20px;">Our project offers various tools and features for users:</p>
+Admin Panel: A detailed control panel for admin users, allowing management of email templates, user monitoring, and data analysis.
+
+Email Templates: Ability to create and manage email templates used in phishing attacks. Different attack scenarios can be created.
+
+Statistics Tracking: Monitoring of email open rates and other statistics to measure the effectiveness of the attacks.
+
+Popular Websites: Creation of copies of popular websites used in phishing attacks, enabling the development of deception scenarios through these sites.
+
+🛠 Technologies Used
+<p style="font-size:20px;">We used the following technologies in our project, with justifications for each selection:</p>
+
+
+ASP.NET Core: A high-performance, secure, and widely supported web development framework. Used for backend functionalities.
+
+PostgreSQL: A high-performance, open-source database system with a large community. Used for data management and storage.
+
+HTML, CSS, JavaScript: Core web technologies used for building the user interface. Helped create a modern and responsive UI.
+
+Bootstrap: A popular CSS framework for creating user-friendly and responsive interfaces. Provided fast and effective design solutions.
+
+Node.js: A JavaScript-based, fast, and scalable server-side platform. Used for backend processing.
+
+🤝 Contributors
+<p style="font-size:20px;">Contributors to this project:</p>
+Sena YILMAZ: Backend development, database integration, and frontend development. Major contributions to the database structure, backend processes, and frontend coding.
+
+Erdem KURT: User interface design, frontend development, and database integration. Actively worked on user experience design, frontend coding, and database structure.
+
+📚 Additional Documents
+<p style="font-size:20px;">The documentation of our project is attached below.</p> (Document is in English.)
+WebFinalProject.pdf
+
+
 # 📧 **Web Phishing Simulation Project**
 
 <p style="font-size:24px;">Bu proje, <b>kimlik avı saldırılarının</b> nasıl gerçekleştirildiğini anlamak ve bu tür saldırılara karşı <b>farkındalık yaratmak</b> amacıyla geliştirilen bir <b>web simülasyonudur</b>. Projemiz, kullanıcıların <b>gerçek dünyadaki kimlik avı girişimlerini</b> anlamalarına yardımcı olacak araçlar sunar.</p>
